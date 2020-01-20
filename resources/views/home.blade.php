@@ -9,23 +9,18 @@
                 <div class="header">
 
                     <div class="form-group col-3">
-                    <button type="button" value="task" class="btn btn-primary toggleModal">Add new task</button>
+                    <button type="button" value="task" class="btn btn-primary toggleModal">Add</button>
                     </div>
 
                         <div class="form-group col-9">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Search for Category" value="{{$search_raw}}" id="search_input" aria-label="Search for Category">
+                                <input type="text" class="form-control" placeholder="Search Category" value="{{$search_raw}}" id="search_input" aria-label="Search Category">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-secondary" id="search-category" type="button">Search</button>
                                 </div>
                             </div>
                         </div>
-
                 </div>
-
-
-
-
                 <div class="card-body">
                     <button class="collapsible active"> Today </button>
                     <div class="c-content" style="max-height: 100%">
@@ -45,7 +40,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-3 col-sm-2 col-lg-1 uploadFilesBtn">
+                                    <div class="form-group col-3 col-sm-3 col-lg-1 uploadFilesBtn">
                                         @if($list->upload_file === 1)
                                             <a href="{{'/todolist/getfile/' .$list->id }}">  <button type="button" class="btn btn-purple btn-sm" >View</button> </a>
                                         @else
@@ -54,12 +49,12 @@
 
                                         @endif
                                     </div>
-                                    <div class="form-group col-5 col-sm-4 col-lg-2 category">
+                                    <div class="form-group col-5 col-sm-5 col-lg-2 category">
                                         @if($list->category->name)
                                             <button class="color-{{$list->category->id}} btn btn-sm">{{$list->category->name}}</button>
                                         @endif
                                     </div>
-                                    <div class="form-group col-3 col-sm-2 col-lg-2 category" style="justify-content: flex-end;">
+                                    <div class="form-group col-4 col-sm-4 col-lg-2 category" style="justify-content: flex-end;">
                                         <div class="dynamic-label">
                                             @if($list->checked === 0)
                                                 @switch($list->deadline)
@@ -82,16 +77,16 @@
                                             @endif
                                         </div>
 
-                                            <div class="dropdown show">
-                                                <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v" style="padding-left: 10px;"></i>
-                                                </a>
+                                        <div class="dropdown show">
+                                            <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v" style="padding-left: 10px;"></i>
+                                            </a>
 
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item" data-toggle="modal" data-target="#updateTask" data-id="{{$list->id}}">Edit</a>
-                                                    <a class="dropdown-item deleteTask" name="{{$list->id}}" href="#">Delete</a>
-                                                </div>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#updateTask" data-id="{{$list->id}}">Edit</a>
+                                                <a class="dropdown-item deleteTask" name="{{$list->id}}" href="#">Delete</a>
                                             </div>
+                                        </div>
                                     </div>
                                 </form>
                             @endforeach
@@ -116,7 +111,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-3 col-sm-2 col-lg-1 uploadFilesBtn">
+                                    <div class="form-group col-3 col-sm-3 col-lg-1 uploadFilesBtn">
                                         @if($list->upload_file === 1)
                                             <a href="{{'/todolist/getfile/' .$list->id }}">  <button type="button" class="btn btn-purple btn-sm" >View</button> </a>
                                         @else
@@ -125,12 +120,12 @@
 
                                         @endif
                                     </div>
-                                    <div class="form-group col-5 col-sm-4 col-lg-2 category">
+                                    <div class="form-group col-5 col-sm-5 col-lg-2 category">
                                         @if($list->category->name)
                                             <button class="color-{{$list->category->id}} btn btn-sm">{{$list->category->name}}</button>
                                         @endif
                                     </div>
-                                    <div class="form-group col-3 col-sm-2 col-lg-2 category" style="justify-content: flex-end;">
+                                    <div class="form-group col-4 col-sm-4 col-lg-2 category" style="justify-content: flex-end;">
                                         <div class="dynamic-label">
                                             @if($list->checked === 0)
                                                 @switch($list->deadline)
@@ -187,7 +182,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-3 col-sm-2 col-lg-1 uploadFilesBtn">
+                                    <div class="form-group col-3 col-sm-3 col-lg-1 uploadFilesBtn">
                                         @if($list->upload_file === 1)
                                             <a href="{{'/todolist/getfile/' .$list->id }}">  <button type="button" class="btn btn-purple btn-sm" >View</button> </a>
                                         @else
@@ -196,12 +191,12 @@
 
                                         @endif
                                     </div>
-                                    <div class="form-group col-5 col-sm-4 col-lg-2 category">
+                                    <div class="form-group col-5 col-sm-5 col-lg-2 category">
                                         @if($list->category->name)
                                             <button class="color-{{$list->category->id}} btn btn-sm">{{$list->category->name}}</button>
                                         @endif
                                     </div>
-                                    <div class="form-group col-3 col-sm-2 col-lg-2 category" style="justify-content: flex-end;">
+                                    <div class="form-group col-4 col-sm-4 col-lg-2 category" style="justify-content: flex-end;">
                                         <div class="dynamic-label">
                                             @if($list->checked === 0)
                                                 @switch($list->deadline)
