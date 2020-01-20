@@ -176,7 +176,9 @@ class TodolistController extends Controller
             }
 
             if( $data['remove_file'] == 1){
-                unlink(storage_path('app/public/uploads/'.$todolist->file));
+                if($todolist->file){
+                    unlink(storage_path('app/public/uploads/'.$todolist->file));
+                }
             }
 
             $remove_value = $data['remove_file'] == "1" ? 0 : ($new_file ? 1 :  $todolist->upload_file);
@@ -184,7 +186,6 @@ class TodolistController extends Controller
 
             $todolist->title = $data['title'];
             $todolist->category_id = $category->id;
-            //unlink from storage too....
             $todolist->file = $file_value;
             $todolist->upload_file = $remove_value;
             $todolist->due_on = Carbon::parse($data['due_on']);
@@ -241,7 +242,9 @@ class TodolistController extends Controller
 
             //remove image too
            $todolist = todolist::where([['id', $id], ['user_id', $user->id]])->first();
-            unlink(storage_path('app/public/uploads/'.$todolist->file));
+            if($todolist->file){
+                unlink(storage_path('app/public/uploads/'.$todolist->file));
+            }
             $todolist->delete();
 
             DB::commit();

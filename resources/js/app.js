@@ -8,66 +8,17 @@ var todolist = {
     },
     common:{
         init:function(){
-            todolist.common.validation();
             todolist.common.toggle();
         },
         toggle: function(){
             $(document).on("click", '.toggleModal', function(e){
-                console.log(e);
-                console.log(e.target.value);
                 $("#" + e.target.value).modal("show");
-
-                console.log("here");
             });
         },
-        validation: function(){
-        },
-        download: function(){
-
-        }
     },
     category:{
         init:function(){
-            todolist.category.post();
             todolist.category.update();
-            todolist.category.delete();
-        },
-        post: function(){
-            $(document).on("click", '#category .post', function(e){
-                e.preventDefault();
-
-                if ( $('#category .post')[0].checkValidity()){
-                    data_array = $('#category .post').serializeArray();
-                    data = [];
-
-                    $.each(data_array, function(key,val){
-                        data[val.name] = val.value;
-                    });
-
-                    $.ajax({
-                        headers: {
-                            'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-                        },
-                        method: 'POST',
-                        url: $('body').data('baseurl')+ '/category',
-                        dataType:'json',
-                        data:{
-                            'name' : data.name
-                        },
-                        success:function(store) {
-                            $("#category").modal("hide");
-                            location.reload();
-                        },
-                        error:function(reject) {
-                           console.log(reject)
-                        }
-                    });
-                } else{
-                    //Validate Form
-                    $('#category .post')[0].reportValidity()
-                }
-            })
-
         },
         update: function(){
             $(document).on("click", '#search-category', function(e) {
@@ -81,10 +32,7 @@ var todolist = {
                     window.location.assign($('body').data('baseurl') + '/home?search='+search);
                 }
             })
-
         },
-        delete: function(){
-        }
     },
     list:{
         init:function(){
