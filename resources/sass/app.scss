@@ -1,0 +1,167 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//jquery
+@import '~jquery-ui/themes/base/all.css';
+
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+
+
+button:focus {
+  outline: none!important;
+}
+
+.card-header{
+  background-color: unset;
+}
+
+.collapsible {
+  cursor: pointer;
+  padding:18px 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  background: unset;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.collapsible:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f077";
+  color: #333;
+  float: left;
+  padding:0 10px;
+  transition: all 0.5s;
+}
+
+.collapsible:after {
+  color:red;
+}
+.collapsible.active:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.c-content {
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  color:#8c8c8c;
+  font-size:15px;
+
+  .form-inline{
+    padding:15px 0;
+    border-bottom: 1px solid #dadada;
+
+    label{
+      color: black;
+    }
+
+    .grey-out{
+      color:unset;
+    }
+  }
+
+  .form-inline:last-child{
+    padding:15px 0;
+    border-bottom: unset;
+  }
+
+  .category button{
+    border-radius: 40px;
+    justify-content: flex-end;
+    color:white;
+    text-transform: capitalize;
+  }
+
+  .category label{
+    @media screen and (max-device-width: 375px){
+      font-size: 12px;
+    }
+  }
+}
+
+
+[class^="color-"][class*="1"] {
+  background: #707886;
+}
+[class^="color-"][class*="2"] {
+  background: #867e70;
+}
+[class^="color-"][class*="3"] {
+  background: #bf9477;
+}
+[class^="color-"][class*="4"] {
+  background: #708678;
+}
+[class^="color-"][class*="5"] {
+  background: #6a8591;
+}
+[class^="color-"][class*="6"] {
+  background: #827086;
+}
+[class^="color-"][class*="7"] {
+  background: #a6ac7d;
+}
+[class^="color-"][class*="8"] {
+  background: #937272;
+}
+[class^="color-"][class*="9"] {
+  background: #4d5474;
+}
+[class^="color-"][class*="0"] {
+  background: #935d5d;
+}
+
+.btn-purple{
+  background:#A3D116;
+  color:white;
+}
+
+.btn-purple:hover{
+  background:white;
+  color:#A3D116;
+  border:1px solid #A3D116;
+}
+
+.btn-pink{
+  background:#FF9B00;
+  color:white;
+}
+
+.btn-pink:hover{
+  background:white;
+  color:#FF9B00;
+  border:1px solid #FF9B00;
+}
+
+.mobile-padding{
+  @media screen and (max-device-width: 1024px){
+    padding-bottom: 15px!important;
+  }
+}
+
+.dropdown-toggle::after {
+  content: unset;
+}
+
+.form-file{
+  color: #b13636;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.header{
+  display: flex;
+  padding: 22px 20px 5px 20px;
+  border-bottom: 1px solid #cccbcb;
+}
